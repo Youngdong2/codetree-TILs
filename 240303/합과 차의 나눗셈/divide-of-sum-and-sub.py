@@ -1,3 +1,3 @@
 a, b= map(int, input().split())
 
-print(round((a+b)/(a-b), 2))
+print(f"{round((a+b)/(a-b), 2):.2f}")
