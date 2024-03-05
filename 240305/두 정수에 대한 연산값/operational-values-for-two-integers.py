@@ -2,7 +2,9 @@ def temp(a, b):
     M = max(a, b)+25
     m = min(a, b)*2
 
-    print(f"{m} {M}")
+    return M, m
 
 a, b = map(int, input().split())
-temp(a, b)
+
+M, m = temp(a, b)
+print(f"{M} {m}")
