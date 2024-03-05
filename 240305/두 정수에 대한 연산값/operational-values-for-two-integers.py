@@ -7,4 +7,4 @@ def temp(a, b):
 a, b = map(int, input().split())
 
 M, m = temp(a, b)
-print(f"{M} {m}")
+print(f"{m} {M}")
