@@ -4,7 +4,7 @@ def temp(n):
 
     print('* '*n)
     temp(n-1)
-    print('*'*n)
+    print('* '*n)
 
 n = int(input())
 temp(n)
