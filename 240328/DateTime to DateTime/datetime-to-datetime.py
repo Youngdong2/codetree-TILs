@@ -4,7 +4,7 @@ h = 11
 m = 11
 
 answer = 0
-if a < d and b < h and c < m:
+if a < d or b < h or c < m:
     print(-1)
 
 else:
