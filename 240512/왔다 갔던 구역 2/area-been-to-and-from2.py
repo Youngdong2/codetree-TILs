@@ -10,13 +10,13 @@ for i in range(n):
         for j in range(state, state+int(x)-1):
             arr[j] += 1
 
-        state = state + int(x)
+        state = state + int(x)-1
 
     else:
         for j in range(state-int(x), state-1):
             arr[j] += 1
 
-        state = state - int(x)
+        state = state - int(x)-1
 
 count = 0
 for a in arr:
