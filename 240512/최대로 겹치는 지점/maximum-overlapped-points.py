@@ -1,6 +1,6 @@
 n = int(input())
 
-arr = [0]*100
+arr = [0]*200
 
 for i in range(n):
     x, y = map(int, input().split())
