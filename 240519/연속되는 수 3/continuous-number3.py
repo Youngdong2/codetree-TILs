@@ -1,16 +1,12 @@
 n = int(input())
 arr = []
 for _ in range(n):
-    m = input()
-    if len(m)==1:
-        arr.append('+')
-    else:
-        arr.append(m[0])
+    arr.append(int(input()))
 
 answer = []
 count = 1
-for i in range(n-1):
-    if arr[i+1]==arr[i]:
+for i in range(n - 1):
+    if (arr[i] > 0 and arr[i + 1] > 0) or (arr[i] < 0 and arr[i + 1] < 0):
         count += 1
     else:
         answer.append(count)
