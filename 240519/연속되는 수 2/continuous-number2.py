@@ -11,5 +11,5 @@ for i in range(n-1):
     else:
         count=1
     answer.append(count)
-
-print(max(answer))
+print(answer)
+#print(max(answer))
