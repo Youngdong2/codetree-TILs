@@ -9,7 +9,9 @@ for i in range(n-1):
     if arr[i+1]==arr[i]:
         count+=1
     else:
+        answer.append(count)
         count=1
-    answer.append(count)
-print(answer)
-#print(max(answer))
+
+answer.append(count)
+    
+print(max(answer))
