@@ -9,7 +9,9 @@ for i in range(n):
         count.append(i)
 
 answer = []
-for i in range(1, len(count)):
-    answer.append(count[i]-count[i-1])
-
+if len(count)>1:
+    for i in range(1, len(count)):
+        answer.append(count[i]-count[i-1])
+else:
+    answer.append(1)
 print(max(answer))
