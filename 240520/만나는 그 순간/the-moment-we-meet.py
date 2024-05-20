@@ -1,51 +1,43 @@
 n, m = map(int, input().split())
 
-arr_a = [0]*1000
-arr_b = [0]*1000
-time = 0
-for i in range(n):
+# A와 B의 위치를 기록할 리스트
+positions_a = []
+positions_b = []
+
+# 현재 위치 초기화
+current_position_a = 0
+current_position_b = 0
+
+# A의 움직임 기록
+for _ in range(n):
     direction, l = input().split()
     l = int(l)
-    if direction=='R':
-        for j in range(l+1):
-            arr_a[time]=arr_a[time-1]+1
-            time += 1
-    else:
-        for j in range(l+1):
-            arr_a[time]=arr_a[time-1]-1
-            time += 1
+    for _ in range(l):
+        if direction == 'R':
+            current_position_a += 1
+        else:
+            current_position_a -= 1
+        positions_a.append(current_position_a)
 
-time = 0
-
-for i in range(m):
+# B의 움직임 기록
+for _ in range(m):
     direction, l = input().split()
     l = int(l)
-    if direction=='R':
-        for j in range(1, l+1):
-            arr_b[time]=arr_b[time-1]+1
-            time += 1
-    else:
-        for j in range(1, l+1):
-            arr_b[time]=arr_b[time-1]-1
-            time += 1
+    for _ in range(l):
+        if direction == 'R':
+            current_position_b += 1
+        else:
+            current_position_b -= 1
+        positions_b.append(current_position_b)
 
-index_a = 0
-for i in range(len(arr_a)-1):
-    if abs(arr_a[i+1]-arr_a[i]) != 1:
-        index_a = i
+# 두 리스트의 길이가 같아야 함을 가정
+assert len(positions_a) == len(positions_b)
+
+# 두 리스트를 비교하여 최초로 같은 위치에 있는 시간 찾기
+meeting_time = -1
+for t in range(len(positions_a)):
+    if positions_a[t] == positions_b[t]:
+        meeting_time = t + 1  # t가 0부터 시작하므로 +1
         break
 
-index_b = 0
-for i in range(len(arr_b)-1):
-    if abs(arr_b[i+1]-arr_b[i]) != 1:
-        index_b = i
-        break
-answer=[]
-for i in range(min(index_a, index_b)):
-    if arr_a[i]==arr_b[i]:
-        answer.append(i)
-        break
-if len(answer)>0:
-    print(answer[0])
-else:
-    print(-1)
+print(meeting_time)
