@@ -1,6 +1,6 @@
 n = int(input())
 
-arr = [input() for _ in range(3)]
+arr = [input() for _ in range(n)]
 result = []
 count = 0
 for s in arr:
