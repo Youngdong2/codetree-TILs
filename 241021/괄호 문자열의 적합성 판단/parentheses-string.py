@@ -1,13 +1,23 @@
 s = input()
 
-stack = []
-for i in range(len(s)):
-    if s[i] == "(":
-        stack.append(1)
-    elif s[i] == ")":
-        stack.pop()
+def check(s):
+    stack = []
+    for i in range(len(s)):
+        if s[i] == '(':
+            stack.append(s[i])
 
-if stack:
-    print("No")
-else:
+        else:
+            if len(stack)==0:
+                return False
+
+            stack.pop()
+
+    if stack:
+        return False
+    
+    return True
+
+if check(s):
     print("Yes")
+else:
+    print("No")
