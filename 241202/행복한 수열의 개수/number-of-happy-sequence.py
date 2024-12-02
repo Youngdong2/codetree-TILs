@@ -4,8 +4,11 @@ for _ in range(n):
     arr.append(list(map(int, input().split())))
 
 def has_consecutive(lst, m):
-    if not lst:  # 빈 리스트 처리
+    if not lst:
         return False
+
+    if m == 1:
+        return True  # 어떤 원소든 조건을 만족하므로 True 반환
 
     count = 1
     for i in range(1, len(lst)):
@@ -16,6 +19,7 @@ def has_consecutive(lst, m):
         else:
             count = 1
     return False
+
 
 answer = 0
 
