@@ -15,7 +15,7 @@ arr = [list(map(int, input().split())) for _ in range(n)]
 answer = 0
 for i in range(n):
     for j in range(n):
-        for k in range(1, n):  # k는 0부터 시작 가능
+        for k in range(n+1):  # k는 0부터 시작 가능
             # 금 개수
             gold = make_rhombus(i, j, k, arr, n)
             # 비용 계산: K*K + (K+1)*(K+1)
